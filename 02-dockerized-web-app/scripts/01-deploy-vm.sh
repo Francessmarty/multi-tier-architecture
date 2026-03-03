@@ -3,7 +3,7 @@ set -e
 
 # Config 
 RG="frances-docker-rg"
-LOC="eastus"
+LOC="northeurope"
 VM="frances-docker-vm"
 USER="frances"
 APP_PORT="8080"
@@ -20,7 +20,7 @@ echo "Creating Ubuntu VM"
 az vm create \
   -g "$RG" -n "$VM" \
   --image Ubuntu2204 \
-  --size Standard_B1s \
+  --size Standard_D2s_v3 \
   --admin-username "$USER" \
   --generate-ssh-keys \
   -o json > /tmp/frances-vm.json
