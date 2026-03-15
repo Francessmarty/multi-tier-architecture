@@ -98,14 +98,14 @@ The verification script confirms that these rules behave exactly as expected.
 ----
 
 ### NSG Rules Summary
-
-| Source   | Destination   | Port | Action |
-|----------|-----------———-|——————|————————|
-| Internet |   Web Tier    | 8080 | Allow  |
-| Web Tier |   App Tier    | 8080 | Allow  |
-| App Tier | Database Tier | 5432 | Allow  |
-| Web Tier | Database Tier | 5432 | Deny   |
-|   Any    | Other traffic | Any  | Deny   |
+	
+	| Source   | Destination   | Port | Action |
+	|----------|-----------———-|——————|————————|
+	| Internet |   Web Tier    | 8080 | Allow  |
+	| Web Tier |   App Tier    | 8080 | Allow  |
+	| App Tier | Database Tier | 5432 | Allow  |
+	| Web Tier | Database Tier | 5432 | Deny   |
+	|   Any    | Other traffic | Any  | Deny   |
 
 
 ----
