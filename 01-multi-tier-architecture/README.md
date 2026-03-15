@@ -89,7 +89,7 @@ Traffic is restricted intentionally:
 
 	Web to App (port 8080): Allowed
 	App to DB (port 5432): Allowed
-	Web to DB: Blocked
+	Web to DB (port 5432): Blocked
 
 This enforces proper tier separation.
 
