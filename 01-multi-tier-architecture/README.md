@@ -141,9 +141,9 @@ There is also a deploy-all script to automate the full setup.
 
 ### How to Deploy
 
-From Cloud Shell:
-		chmod +x scripts/*.sh
-	./scripts/04-deploy-all.sh
+	From Cloud Shell:
+	chmod +x scripts/*.sh
+	scripts/04-deploy-all.sh
 
 ---- 
 
