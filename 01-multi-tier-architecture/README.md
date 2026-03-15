@@ -18,7 +18,50 @@ Everything was deployed using CLI. No manual resource creation in the Azure Port
 
 ----
 
-### Architecture
+
+### Technologies Used
+
+	• Microsoft Azure
+	• Azure CLI
+	• Bash scripting
+	• Virtual Networks (VNet)
+	• Network Security Groups (NSG)
+	• Linux Virtual Machines
+	• GitHub for version control
+
+----
+
+
+### Architecture Diagram
+
+`
+                Internet
+                   │
+                   ▼
+           Web Tier (Web VM)
+           Subnet: 10.10.1.0/24
+           Port: 8080
+                   │
+                   ▼
+           App Tier (App VM)
+           Subnet: 10.10.2.0/24
+           Port: 5432
+                   │
+                   ▼
+           Database Tier (DB VM)
+           Subnet: 10.10.3.0/24
+
+
+The architecture enforces strict tier separation:
+
+• Internet traffic reaches only the **Web Tier**
+• The **Web Tier** communicates with the **App Tier**
+• The **App Tier** communicates with the **Database Tier**
+• Direct **Web → Database** communication is blocked by NSG rules
+
+
+----
+
 
 ### Network Setup
 
@@ -53,6 +96,20 @@ This enforces proper tier separation.
 The verification script confirms that these rules behave exactly as expected.
 
 ----
+
+### NSG Rules Summary
+
+| Source   | Destination   | Port | Action |
+|----------|-----------———-|——————|————————|
+| Internet |   Web Tier    | 8080 | Allow  |
+| Web Tier |   App Tier    | 8080 | Allow  |
+| App Tier | Database Tier | 5432 | Allow  |
+| Web Tier | Database Tier | 5432 | Deny   |
+|   Any    | Other traffic | Any  | Deny   |
+
+
+----
+
 
 ### What This Project Demonstrates
 
