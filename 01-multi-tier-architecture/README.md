@@ -1,4 +1,4 @@
-No### Project 1: VNet Multi Tier Architecture with Access Control
+### Project 1: VNet Multi Tier Architecture with Access Control
 
 ----
 
