@@ -37,20 +37,20 @@ Everything was deployed using CLI. No manual resource creation in the Azure Port
 
                 My Public IP
                    │
-				             SSH 22
+				 SSH 22
                    ▼
            Web Tier (Web VM)
            Subnet: 10.10.1.0/24
                    │
-			Web to App 8080
+		Web to App 8080
                    ▼
            App Tier (App VM)
            Subnet: 10.10.2.0/24
                    │
 		 App to Database 5432
                    ▼
-        Database Tier (DB VM)
-        Subnet: 10.10.3.0/24
+          Database Tier (DB VM)
+          Subnet: 10.10.3.0/24
 
 
 The architecture enforces strict tier separation:
